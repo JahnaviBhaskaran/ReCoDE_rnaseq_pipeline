@@ -59,7 +59,7 @@ In the `workflows/simple_local_pipeline.sh` script, we looped through the sample
 readarray -t SAMPLE_SRR < data/files.txt
 ```
 
-Then, wwe select the Nth value of the sample list (i.e. the Nth row of `data/files.txt`), in the following code:
+Then, we select the Nth value of the sample list (i.e. the Nth row of `data/files.txt`), in the following code:
 ```
 s="${SAMPLE_SRR[$PBS_ARRAY_INDEX - 1]}"
 ```
