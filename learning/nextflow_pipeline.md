@@ -249,7 +249,7 @@ The first step within the if statement is the indexing step:
 STAR_INDEX(file("$params.genome_fasta"), file("$params.genome_gtf"))
 ```
 
-To this channel, we use the `file` function to provide two inputs. This function creates a value channel from the path of a single file, which is defined within `params` in this case. The indexing step requires the `.fasta` and `.gtf` files to create the genome index. Alternatively, wee could have assigned each of these value channels to a variable, then passed these variables to `STAR_INDEX`.
+To this channel, we use the `file` function to provide two inputs. This function creates a value channel from the path of a single file, which is defined within `params` in this case. The indexing step requires the `.fasta` and `.gtf` files to create the genome index. Alternatively, we could have assigned each of these value channels to a variable, then passed these variables to `STAR_INDEX`.
 
 We then provide the indexed genome created by this process to `ALIGN`, which creates a `.bam` file that details how the reads were aligned to the genome. The program htseq-count uses the `.bam` alignment file produced by `ALIGN` and the `.gft` annotations file produced by `STAR_INDEX` to create the final `.counts` file that we will use in our downstream analysis.
 ```
